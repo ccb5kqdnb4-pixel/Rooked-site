@@ -9,30 +9,34 @@ const adminEmail = "administrator@thesocalledcompassionateleft.com"; // replace 
   description="Landing page for podcast notes and updates."
 >
 
-  <main style="max-width: 700px; margin: 4rem auto; padding: 0 1rem; text-align: center;">
+<main style="max-width: 700px; margin: 4rem auto; padding: 0 1rem; text-align: center;">
     
-    <h1 style="font-size: 2.8rem; margin-bottom: 1rem;">
-      Welcome to the primordial website for the Rooked! podcast.
-    </h1>
+  <h1 style="font-size: 2.8rem; margin-bottom: 1rem;">
+    Welcome to the primordial website for the Rooked! podcast.
+  </h1>
 
-    <p style="font-size: 1.2rem; line-height: 1.6;">
-      This is the central landing page for our show.  
-      Episode notes, bibliographies, and more will live here soon.
-    </p>
+  <p style="font-size: 1.2rem; line-height: 1.6;">
+    This is the central landing page for our show.  
+    Episode notes, bibliographies, and more will live here soon.
+  </p>
 
-  
-<section style="margin-top: 3rem;">
-  <a 
+  <img 
+    src="/images/rookedsurprise.jpeg" 
+    alt="Television screen showing police badge and shocked silhouette" 
+    style="max-width: 100%; height: auto; margin: 2rem auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" 
+  />
+
+  <section style="margin-top: 3rem;">
     <a href="/notes">Go to About Page</a>
-</section>
+  </section>
 
-    <section style="margin-top: 3rem; font-size: 1rem;">
-      <p>Administrator contact:</p>
-      <a href={`mailto:${adminEmail}`} style="color:#444; text-decoration:underline;">
-        {adminEmail}
-      </a>
-    </section>
+  <section style="margin-top: 3rem; font-size: 1rem;">
+    <p>Administrator contact:</p>
+    <a href={`mailto:${adminEmail}`} style="color:#444; text-decoration:underline;">
+      {adminEmail}
+    </a>
+  </section>
 
-  </main>
+</main>
 
 </BaseLayout>
