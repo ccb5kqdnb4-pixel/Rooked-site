@@ -17,17 +17,66 @@ const adminEmail = "administrator@thesocalledcompassionateleft.com"; // replace 
 
   <p style="font-size: 1.2rem; line-height: 1.6;">
     This is the central landing page for our show.  
-    Episode notes, bibliographies, and more will live here soon.
-  </p>
+      </p>
 
-<!--
+      
+
+<!-- Scorecard Component -->
+<div id="bethany-scorecard" class="scorecard">
+  <h3>Bethany’s Running Average Score</h3>
+  <div id="bethany-score" class="score">Loading…</div>
+  <p id="bethany-note" class="note"></p>
+</div>
+
+<style>
+  .scorecard {
+    background: #f7f7f7;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 240px;
+    text-align: center;
+    font-family: sans-serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin: 1rem 0;
+  }
+
+  .scorecard .score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2a7a2a;
+  }
+
+  .scorecard .note {
+    font-size: 0.9rem;
+    color: #555;
+  }
+</style>
+
+<script>
+  // Fetch score.json from your public/ directory
+  fetch('/score.json')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('bethany-score').textContent = data.bethanyScore;
+      document.getElementById('bethany-note').textContent =
+        "Updated after " + data.lastUpdated;
+    })
+    .catch(err => {
+      console.error("Error loading score:", err);
+      document.getElementById('bethany-score').textContent = "N/A";
+      document.getElementById('bethany-note').textContent =
+        "Could not load score data";
+    });
+</script>
+
+
   <img 
     src="/images/rookedsurprise.jpeg" 
     alt="Television screen showing police badge and shocked silhouette" 
     style="max-width: 100%; height: auto; margin: 2rem auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" 
   />
 
-
+<!--
   <section style="margin-top: 3rem;">
     <a href="/notes">Go to About Page</a>
   </section>
