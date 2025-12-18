@@ -19,7 +19,63 @@ const adminEmail = "administrator@thesocalledcompassionateleft.com"; // replace 
     This is the central landing page for our show.  
       </p>
 
-      
+<div class="podcast-links">
+  <a
+    class="podcast-btn spotify"
+    href="https://open.spotify.com/show/13DaASRu7vXFRddB5Vc4ep?si=AN7teFYgTUGCrfxGJ1TFVw"
+    target="_blank"
+    rel="noopener"
+  >
+    Listen on Spotify
+  </a>
+
+  <a
+    class="podcast-btn apple"
+    href="https://podcasts.apple.com/us/podcast/rooked/id1859071794"
+    target="_blank"
+    rel="noopener"
+  >
+    Listen on Apple Podcasts
+  </a>
+</div>
+
+<style>
+  /* Container spacing */
+  .podcast-links {
+    display: flex;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+  }
+
+  /* Base button style */
+  .podcast-links .podcast-btn {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+
+  /* Hover effect */
+  .podcast-links .podcast-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+  }
+
+  /* Spotify brand color */
+  .podcast-links .podcast-btn.spotify {
+    background-color: #1db954;
+  }
+
+  /* Apple Podcasts brand color */
+  .podcast-links .podcast-btn.apple {
+    background-color: #000000;
+  }
+</style>
 
 <!-- Scorecard Component -->
 <div id="bethany-scorecard" class="scorecard">
