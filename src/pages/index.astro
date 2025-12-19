@@ -17,126 +17,117 @@ const adminEmail = "administrator@thesocalledcompassionateleft.com"; // replace 
 
   <p style="font-size: 1.2rem; line-height: 1.6;">
     This is the central landing page for our show.  
-      </p>
+  </p>
 
-<div class="podcast-links">
-  <a
-    class="podcast-btn spotify"
-    href="https://open.spotify.com/show/13DaASRu7vXFRddB5Vc4ep?si=AN7teFYgTUGCrfxGJ1TFVw"
-    target="_blank"
-    rel="noopener"
-  >
-    Listen on Spotify
-  </a>
+  <!-- Podcast Links -->
+  <div class="podcast-links">
+    <a
+      class="podcast-btn spotify"
+      href="https://open.spotify.com/show/13DaASRu7vXFRddB5Vc4ep?si=AN7teFYgTUGCrfxGJ1TFVw"
+      target="_blank"
+      rel="noopener"
+    >
+      Listen on Spotify
+    </a>
 
-  <a
-    class="podcast-btn apple"
-    href="https://podcasts.apple.com/us/podcast/rooked/id1859071794"
-    target="_blank"
-    rel="noopener"
-  >
-    Listen on Apple Podcasts
-  </a>
-</div>
+    <a
+      class="podcast-btn apple"
+      href="https://podcasts.apple.com/us/podcast/rooked/id1859071794"
+      target="_blank"
+      rel="noopener"
+    >
+      Listen on Apple Podcasts
+    </a>
+  </div>
 
-<style>
-  /* Container spacing */
-  .podcast-links {
-    display: flex;
-    gap: 1.25rem;
-    margin: 1.5rem 0;
-    flex-wrap: wrap;
-  }
+  <style>
+    .podcast-links {
+      display: flex;
+      justify-content: center; /* center horizontally */
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
 
-  /* Base button style */
-  .podcast-links .podcast-btn {
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    border-radius: 10px;
-    font-weight: 600;
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    transition: transform 0.15s ease, opacity 0.15s ease;
-  }
+    .podcast-links .podcast-btn {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
 
-  /* Hover effect */
-  .podcast-links .podcast-btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-  }
+    .podcast-links .podcast-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
 
-  /* Spotify brand color */
-  .podcast-links .podcast-btn.spotify {
-    background-color: #1db954;
-  }
+    .podcast-links .podcast-btn.spotify {
+      background-color: #1db954;
+    }
 
-  /* Apple Podcasts brand color */
-  .podcast-links .podcast-btn.apple {
-    background-color: #000000;
-  }
-</style>
+    .podcast-links .podcast-btn.apple {
+      background-color: #000000;
+    }
+  </style>
 
-<!-- Scorecard Component -->
-<div id="bethany-scorecard" class="scorecard">
-  <h3>Bethany’s Running Average Score</h3>
-  <div id="bethany-score" class="score">Loading…</div>
-  <p id="bethany-note" class="note"></p>
-</div>
-
-<style>
-  .scorecard {
-    background: #f7f7f7;
-    padding: 1rem;
-    border-radius: 8px;
-    width: 240px;
-    text-align: center;
-    font-family: sans-serif;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    margin: 1rem 0;
-  }
-
-  .scorecard .score {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #2a7a2a;
-  }
-
-  .scorecard .note {
-    font-size: 0.9rem;
-    color: #555;
-  }
-</style>
-
-<script>
-  // Fetch score.json from your public/ directory
-  fetch('/score.json')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('bethany-score').textContent = data.bethanyScore;
-      document.getElementById('bethany-note').textContent =
-        "Updated after " + data.lastUpdated;
-    })
-    .catch(err => {
-      console.error("Error loading score:", err);
-      document.getElementById('bethany-score').textContent = "N/A";
-      document.getElementById('bethany-note').textContent =
-        "Could not load score data";
-    });
-</script>
-
-
+  <!-- Logo Image -->
   <img 
     src="/images/rookedsurprise.jpeg" 
     alt="Television screen showing police badge and shocked silhouette" 
     style="max-width: 100%; height: auto; margin: 2rem auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" 
   />
 
-<!--
-  <section style="margin-top: 3rem;">
-    <a href="/notes">Go to About Page</a>
-  </section>
--->
+  <!-- Scorecard Component (moved underneath image) -->
+  <div id="bethany-scorecard" class="scorecard">
+    <h3>Bethany’s Running Average Score</h3>
+    <div id="bethany-score" class="score">Loading…</div>
+    <p id="bethany-note" class="note"></p>
+  </div>
+
+  <style>
+    .scorecard {
+      background: #f7f7f7;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 240px;
+      text-align: center;
+      font-family: sans-serif;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin: 1rem auto; /* center under image */
+    }
+
+    .scorecard .score {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #2a7a2a;
+    }
+
+    .scorecard .note {
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+
+  <script>
+    fetch('/score.json')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('bethany-score').textContent = data.bethanyScore;
+        document.getElementById('bethany-note').textContent =
+          "Updated after " + data.lastUpdated;
+      })
+      .catch(err => {
+        console.error("Error loading score:", err);
+        document.getElementById('bethany-score').textContent = "N/A";
+        document.getElementById('bethany-note').textContent =
+          "Could not load score data";
+      });
+  </script>
+
   <section style="margin-top: 3rem; font-size: 1rem;">
     <p>Administrator contact:</p>
     <a href={`mailto:${adminEmail}`} style="color:#444; text-decoration:underline;">
